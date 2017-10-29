@@ -3,3 +3,6 @@
 ################################################################################
 
 /GameLocation/BLL/obj/Debug
+/GameLocation/DAL/obj/Debug
+/GameLocation/Entities/obj/Debug
+/GameLocation/.vs/GameLocation/v15/Server/sqlite3
