@@ -1,9 +1,7 @@
 ﻿using Entities;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL
@@ -13,6 +11,7 @@ namespace DAL
         Task AddAsync(Game game);
         Task EditAsync(Game game);
         Task<Game> GetByIdAsync(int gameId);
+        Task<List<Game>> GetGamesAsync();
     }
     public class GameRepository : RepositoryBase, IGameRepository
     {
@@ -37,6 +36,11 @@ namespace DAL
         public Task<Game> GetByIdAsync(int gameId)
         {
             return _dbContext.GameQuery.Where(x => x.Id == gameId).FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Game>> GetGamesAsync()
+        {
+            return await _dbContext.GameQuery.ToListAsync();
         }
     }
 }

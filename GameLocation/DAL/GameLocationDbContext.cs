@@ -36,7 +36,7 @@ namespace DAL
     {
 
         #region Infra
-        public GameLocationDbContext() : base("name=WorkScheduleDbContext")
+        public GameLocationDbContext() : base("name=GameLocationDbContext")
         {
             Database.SetInitializer(new GameLocationDbContextInitializer());
             Configuration.LazyLoadingEnabled = false;

@@ -15,6 +15,7 @@ namespace DAL
         Task<Location> GetByIdAsync(int locationId);
         Task<List<Location>> GetLocationByFriendId(int friendId);
         Task<Location> GetValidLocationByGameId(int gameId);
+        Task<List<Location>> GetLocationAsync();
     }
     public class LocationRepository : RepositoryBase , ILocationRepository
     {
@@ -39,6 +40,11 @@ namespace DAL
         public Task<Location> GetByIdAsync(int locationId)
         {
             return _dbContext.LocationQuery.Where(x => x.Id == locationId).FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Location>> GetLocationAsync()
+        {
+            return await _dbContext.LocationQuery.ToListAsync();
         }
 
         public Task<List<Location>> GetLocationByFriendId(int friendId)
