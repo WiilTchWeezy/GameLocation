@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="gamelocation">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title ng-bind="title"></title>
+    @System.Web.Optimization.Styles.Render("~/Content/css")
+    <link rel="stylesheet/less" type="text/css" href="~/Content/template.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+</head>
+<body ng-controller="RootController" ng-cloak>
+    <div id="wrapper">
+        <div class="overlay"></div>
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Game Location
+                    </a>
+                </li>
+                <li>
+                    <a href="#/game/index"><i class="fa fa-fw fa-home"></i> Jogos</a>
+                </li>
+                <li>
+                    <a href="#/friend/index"><i class="fa fa-fw fa-folder"></i> Amigos</a>
+                </li>
+                <li>
+                    <a href="#/location/index"><i class="fa fa-fw fa-file-o"></i> Emprestimos</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+                <span class="hamb-top hamburger-backgournd"></span>
+                <span class="hamb-middle hamburger-backgournd"></span>
+                <span class="hamb-bottom hamburger-backgournd"></span>
+            </button>
+            <div class="container">
+                <div class="row">
+                        <div ng-view></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+    @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+    @System.Web.Optimization.Scripts.Render("~/bundles/angular")
+    @System.Web.Optimization.Scripts.Render("~/bundles/angularapp")
+</body>
+</html>

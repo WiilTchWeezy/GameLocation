@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div ng-controller="LocationController">
+    <div>
+        <a href="#/location/create"><i class="fa fa-plus-circle"></i> Adicionar</a>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Dia Locaçao</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="d in data">
+                    <td>{{d.Id}}</td>
+                    <td>{{d.LocationDate | date:'dd/MM/yyyy'}}</td>
+                    <td><a href="#/location/edit"><i class="fa fa-pencil"></i></a></td>
+                    <td><a prevent-default ng-click="delete(d.Id);"><i class="fa fa-minus-circle"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

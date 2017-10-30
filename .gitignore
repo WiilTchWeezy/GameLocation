@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/GameLocation/BLL/obj/Debug
+/GameLocation/DAL/obj/Debug
+/GameLocation/Entities/obj/Debug
+/GameLocation/.vs/GameLocation/v15/Server/sqlite3
+/GameLocation/DAL.Infra
+/GameLocation/packages/EntityFramework.6.2.0
+/GameLocation/GameLocation.Web/bin
+/GameLocation/GameLocation.Web/obj/Debug
+/GameLocation/packages
+/GameLocation/BLL/bin/Debug
+/GameLocation/DAL/bin/Debug
