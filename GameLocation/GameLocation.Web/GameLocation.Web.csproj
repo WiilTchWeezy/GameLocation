@@ -173,6 +173,7 @@
     <Compile Include="ApiControllers\FriendController.cs" />
     <Compile Include="ApiControllers\GameController.cs" />
     <Compile Include="ApiControllers\LocationController.cs" />
+    <Compile Include="ApiControllers\UserController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\StartUp.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="UoWs\GameUoW.cs" />
     <Compile Include="UoWs\LocationUoW.cs" />
     <Compile Include="UoWs\UoW.cs" />
+    <Compile Include="UoWs\UserUoW.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -202,6 +204,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="DTO\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

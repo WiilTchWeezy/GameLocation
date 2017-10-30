@@ -5,25 +5,28 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using GameLocation.Web.UoWs;
-using BLL.Exception;
 using System.Threading.Tasks;
+using BLL.Exception;
+using Entities;
 
 namespace GameLocation.Web.ApiControllers
 {
-    public class LocationController : BaseController
+    public class UserController : BaseController
     {
-        private LocationUoW _uow;
-        public LocationController(LocationUoW uoW) : base(uoW)
+        private UserUoW _uow;
+        public UserController(UserUoW uoW) : base(uoW)
         {
             _uow = uoW;
         }
 
-        [Route("api/location/getlocations"), HttpGet]
-        public async Task<IHttpActionResult> GetLocationAsync()
+        [AllowAnonymous]
+        [Route("api/user/create"), HttpPost]
+        public async Task<IHttpActionResult> CreateAsync([FromBody] User user)
         {
             try
             {
-                return Ok(await _uow.LocationBLL.GetLocationAsync());
+                await _uow.UserBLL.AddAsync(user.Name, user.Password);
+                return Ok();
             }
             catch (BusinessException ex)
             {

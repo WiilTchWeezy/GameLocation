@@ -45,7 +45,8 @@ namespace BLL
 
         public async Task<User> LoginAsync(string name, string password)
         {
-            return await _userRepository.GetByNamePassword(name, password);
+            var encryptPassword = MD5Helper.Encrypt(password);
+            return await _userRepository.GetByNamePassword(name, encryptPassword);
         }
     }
 }

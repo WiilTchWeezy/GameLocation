@@ -11,3 +11,5 @@
 /GameLocation/GameLocation.Web/bin
 /GameLocation/GameLocation.Web/obj/Debug
 /GameLocation/packages
+/GameLocation/BLL/bin/Debug
+/GameLocation/DAL/bin/Debug

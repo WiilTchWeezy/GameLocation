@@ -18,16 +18,15 @@ namespace DAL
         {
         }
 
-        public Task AddAsync(User user)
+        public async Task AddAsync(User user)
         {
-            return Task.Run(()=> {
-                _dbContext.Add(user);
-            });
+            await _dbContext.Add(user);
         }
 
         public Task EditAsync(User user)
         {
-            return Task.Run(() => {
+            return Task.Run(() =>
+            {
                 _dbContext.Edit(user);
             });
         }
