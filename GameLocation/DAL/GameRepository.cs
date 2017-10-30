@@ -19,18 +19,14 @@ namespace DAL
         {
         }
 
-        public Task AddAsync(Game game)
+        public async Task AddAsync(Game game)
         {
-            return Task.Run(() => {
-                _dbContext.Add(game);
-            });
+            await _dbContext.Add(game);
         }
 
-        public Task EditAsync(Game game)
+        public async Task EditAsync(Game game)
         {
-            return Task.Run(() => {
-                _dbContext.Edit(game);
-            });
+            await _dbContext.Edit(game);
         }
 
         public Task<Game> GetByIdAsync(int gameId)

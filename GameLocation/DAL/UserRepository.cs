@@ -20,15 +20,12 @@ namespace DAL
 
         public async Task AddAsync(User user)
         {
-            await _dbContext.Add(user);
+            await  _dbContext.Add(user);
         }
 
-        public Task EditAsync(User user)
+        public async Task EditAsync(User user)
         {
-            return Task.Run(() =>
-            {
-                _dbContext.Edit(user);
-            });
+            await _dbContext.Edit(user);
         }
 
         public async Task<User> GetById(int userId)

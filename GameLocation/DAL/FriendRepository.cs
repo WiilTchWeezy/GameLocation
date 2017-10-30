@@ -19,18 +19,14 @@ namespace DAL
         {
         }
 
-        public Task AddAsync(Friend friend)
+        public async Task AddAsync(Friend friend)
         {
-            return Task.Run(() => {
-                _dbContext.Add(friend);
-            });
+            await _dbContext.Add(friend);
         }
 
-        public Task EditAsync(Friend friend)
+        public async Task EditAsync(Friend friend)
         {
-            return Task.Run(()=> {
-                _dbContext.Edit(friend);
-            });
+            await _dbContext.Edit(friend);
         }
 
         public Task<Friend> GetById(int friendId)
