@@ -1,0 +1,17 @@
+﻿.margin-top{
+    margin-top:7px;
+}
+
+.input-color:focus  {
+   border-color: #662D91 !important;
+}
+
+.button-default-color{
+    background-color: #662D91;
+    color: #FFF !important;
+    font-weight: bold !important;
+}
+
+.hamburger-backgournd{
+    background-color : #662D91 !important;
+}

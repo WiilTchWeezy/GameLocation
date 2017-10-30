@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html ng-app="gamelocation" ng-controller="SignUpController" ng-cloak>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingenium WorkSchedule - Login</title>
+    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" type="image/x-icon">
+    <script type="text/javascript">
+        var applicationPathHeader = "@Url.Content("~/")";
+    </script>
+    @System.Web.Optimization.Styles.Render("~/Content/csstemplateoff")
+
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+    @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+    @System.Web.Optimization.Scripts.Render("~/bundles/login")
+    @System.Web.Optimization.Scripts.Render("~/bundles/angular")
+</head>
+<body>
+    <style>
+        .input-group {
+            display: block !important;
+        }
+
+        .form-control {
+            margin: 7px;
+        }
+    </style>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form>
+                <div class="margin-top">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-color" id="password" placeholder="Nome" ng-model="Name">
+                    </div>
+                    <div class="input-group">
+                        <input type="password" class="form-control input-color" id="cpfcnpj" placeholder="Senha" ng-model="Password">
+                    </div>
+                </div>
+                <button type="submit" ng-click="signup();" prevent-default class="form-control btn btn-default margin-top button-default-color">Cadastrar</button>
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+</body>
+</html>

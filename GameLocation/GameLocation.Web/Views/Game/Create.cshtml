@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="row" ng-controller="GameCreateController">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <form>
+            <div class="margin-top">
+                <div class="input-group">
+                    <input type="text" class="form-control input-color" id="password" placeholder="Nome" ng-model="Name">
+                </div>
+            </div>
+            <button type="submit" ng-click="create();" prevent-default class="form-control btn btn-default margin-top button-default-color">Cadastrar</button>
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

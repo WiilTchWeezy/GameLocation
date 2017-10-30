@@ -7,6 +7,7 @@ using System.Web.Http;
 using GameLocation.Web.UoWs;
 using BLL.Exception;
 using System.Threading.Tasks;
+using Entities;
 
 namespace GameLocation.Web.ApiControllers
 {
@@ -24,6 +25,20 @@ namespace GameLocation.Web.ApiControllers
             try
             {
                 return Ok(await _uow.LocationBLL.GetLocationAsync());
+            }
+            catch (BusinessException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [Route("api/location/create"), HttpPost]
+        public async Task<IHttpActionResult> CreateAsync([FromBody] Location location)
+        {
+            try
+            {
+                await _uow.LocationBLL.AddAsync(location.FriendId, location.GameId);
+                return Ok();
             }
             catch (BusinessException ex)
             {

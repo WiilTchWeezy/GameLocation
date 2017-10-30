@@ -18,7 +18,8 @@ namespace BLL
         private IGameLocationDbContext _dbContext;
         public GameBLL(IGameRepository gameRepository, IGameLocationDbContext dbContext)
         {
-
+            _gameRepository = gameRepository;
+            _dbContext = dbContext;
         }
 
         public async Task AddAsync(string name)

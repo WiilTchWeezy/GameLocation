@@ -17,24 +17,20 @@ namespace DAL
         Task<Location> GetValidLocationByGameId(int gameId);
         Task<List<Location>> GetLocationAsync();
     }
-    public class LocationRepository : RepositoryBase , ILocationRepository
+    public class LocationRepository : RepositoryBase, ILocationRepository
     {
         public LocationRepository(IGameLocationDbContext dbContext) : base(dbContext)
         {
         }
 
-        public Task AddAsync(Location location)
+        public async Task AddAsync(Location location)
         {
-            return Task.Run(()=> {
-                _dbContext.Add(location);
-            });
+            await _dbContext.Add(location);
         }
 
-        public Task EditAsync(Location location)
+        public async Task EditAsync(Location location)
         {
-            return Task.Run(() => {
-                _dbContext.Edit(location);
-            });
+            await _dbContext.Edit(location);
         }
 
         public Task<Location> GetByIdAsync(int locationId)

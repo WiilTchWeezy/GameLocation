@@ -11,6 +11,7 @@ namespace BLL
         Task AddAsync(string name, string phone);
         Task EditAsync(int friendId, string name, string phone);
         Task<List<Friend>> GetFriendsAsync();
+        Task<Friend> GetFriendById(int friendId);
     }
     public class FriendBLL : IFriendBLL
     {
@@ -41,6 +42,11 @@ namespace BLL
             friend.Phone = phone;
             await _friendRepository.EditAsync(friend);
             await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<Friend> GetFriendById(int friendId)
+        {
+            return await _friendRepository.GetById(friendId);
         }
 
         public async Task<List<Friend>> GetFriendsAsync()
